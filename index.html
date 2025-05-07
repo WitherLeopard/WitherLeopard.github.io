@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Build Gallery</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            font-style: italic;
+            font-weight: 300;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Build gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .build-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .build-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .build-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #2C3E50;
+        }
+
+        .build-info {
+            padding: 1.5rem;
+        }
+
+        .build-title {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+            color: #2C3E50;
+        }
+
+        .build-description {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .build-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #3498DB;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+        }
+
+        .build-link:hover {
+            background-color: #2980B9;
+        }
+
+        /* Filter controls */
+        .filters {
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background-color: #95a5a6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #7f8c8d;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C3E50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: #3498DB;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Minecraft Build Gallery</h1>
+        <p class="subtitle">Showcasing amazing Minecraft creations</p>
+    </header>
+
+    <div class="container">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Builds</button>
+            <button class="filter-btn" data-filter="medieval">Medieval</button>
+            <button class="filter-btn" data-filter="modern">Modern</button>
+            <button class="filter-btn" data-filter="fantasy">Fantasy</button>
+            <button class="filter-btn" data-filter="redstone">Redstone</button>
+        </div>
+
+        <div class="gallery">
+            <!-- Example build card 1 -->
+            <div class="build-card" data-category="medieval">
+                <img src="/api/placeholder/400/320" alt="Medieval Castle" class="build-image">
+                <div class="build-info">
+                    <h3 class="build-title">Medieval Castle</h3>
+                    <p class="build-description">A sprawling castle with towers, courtyards, and a moat. Perfect for survival multiplayer.</p>
+                    <a href="https://github.com/yourusername/medieval-castle" class="build-link">Download</a>
+                </div>
+            </div>
+
+            <!-- Example build card 2 -->
+            <div class="build-card" data-category="modern">
+                <img src="/api/placeholder/400/320" alt="Modern Mansion" class="build-image">
+                <div class="build-info">
+                    <h3 class="build-title">Modern Mansion</h3>
+                    <p class="build-description">Luxury modern home with swimming pool, garden, and spacious interior.</p>
+                    <a href="https://github.com/yourusername/modern-mansion" class="build-link">Download</a>
+                </div>
+            </div>
+
+            <!-- Example build card 3 -->
+            <div class="build-card" data-category="fantasy">
+                <img src="/api/placeholder/400/320" alt="Elven Tree City" class="build-image">
+                <div class="build-info">
+                    <h3 class="build-title">Elven Tree City</h3>
+                    <p class="build-description">Magical city built among giant trees with hanging bridges and glowing lanterns.</p>
+                    <a href="https://github.com/yourusername/elven-tree-city" class="build-link">Download</a>
+                </div>
+            </div>
+
+            <!-- Example build card 4 -->
+            <div class="build-card" data-category="redstone">
+                <img src="/api/placeholder/400/320" alt="Automatic Farm" class="build-image">
+                <div class="build-info">
+                    <h3 class="build-title">Automatic Farm</h3>
+                    <p class="build-description">Self-harvesting wheat, carrot, potato and beetroot farm with storage system.</p>
+                    <a href="https://github.com/yourusername/automatic-farm" class="build-link">Download</a>
+                </div>
+            </div>
+
+            <!-- Example build card 5 -->
+            <div class="build-card" data-category="medieval">
+                <img src="/api/placeholder/400/320" alt="Medieval Village" class="build-image">
+                <div class="build-info">
+                    <h3 class="build-title">Medieval Village</h3>
+                    <p class="build-description">Complete village with blacksmith, tavern, church, and residential buildings.</p>
+                    <a href="https://github.com/yourusername/medieval-village" class="build-link">Download</a>
+                </div>
+            </div>
+
+            <!-- Example build card 6 -->
+            <div class="build-card" data-category="fantasy">
+                <img src="/api/placeholder/400/320" alt="Crystal Palace" class="build-image">
+                <div class="build-info">
+                    <h3 class="build-title">Crystal Palace</h3>
+                    <p class="build-description">Magical castle made of colored glass with crystalline structures.</p>
+                    <a href="https://github.com/yourusername/crystal-palace" class="build-link">Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Minecraft Build Gallery</p>
+        <div class="footer-links">
+            <a href="https://github.com/yourusername">GitHub</a>
+            <a href="mailto:your-email@example.com">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const buildCards = document.querySelectorAll('.build-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Get filter value
+                    const filterValue = button.getAttribute('data-filter');
+
+                    // Show/hide cards based on filter
+                    buildCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
