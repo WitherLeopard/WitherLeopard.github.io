@@ -10,16 +10,33 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1E2023;
+            background-color: #f0f0f0;
             color: #333;
         }
 
         header {
-            background-color: #0f1112;
+            background-image: url('/api/placeholder/1600/600');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            min-height: 400px;
             color: white;
-            padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        header:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100px;
+            background-image: linear-gradient(to bottom, transparent, #f0f0f0);
         }
 
         h1 {
@@ -64,7 +81,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-bottom: 3px solid #5F5204;
+            border-bottom: 3px solid #2C3E50;
         }
 
         .build-info {
@@ -74,7 +91,7 @@
         .build-title {
             margin: 0 0 0.5rem 0;
             font-size: 1.5rem;
-            color: #5F5204;
+            color: #2C3E50;
         }
 
         .build-description {
@@ -159,8 +176,10 @@
 </head>
 <body>
     <header>
-        <h1>Minecraft Build Gallery</h1>
-        <p class="subtitle">Showcasing amazing Minecraft creations</p>
+        <div style="background-color: rgba(0,0,0,0.5); padding: 2rem; border-radius: 8px; max-width: 80%;">
+            <h1>Minecraft Build Gallery</h1>
+            <p class="subtitle">Showcasing amazing Minecraft creations</p>
+        </div>
     </header>
 
     <div class="container">
