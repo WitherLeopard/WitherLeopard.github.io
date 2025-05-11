@@ -98,11 +98,14 @@
         }
 
         .build-card {
-            background-color: white;
+            background-color: #f5f5f5; /* Lighter color for cards */
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer; /* Show pointer cursor to indicate clickable */
+            text-decoration: none; /* Remove underline from links */
+            display: block; /* Make the entire card a link */
         }
 
         .build-card:hover {
@@ -131,22 +134,6 @@
             margin: 0;
             color: #666;
             line-height: 1.5;
-        }
-
-        .build-link {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: #3498DB;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background-color 0.2s ease;
-        }
-
-        .build-link:hover {
-            background-color: #2980B9;
         }
 
         /* Filter controls */
@@ -237,64 +224,58 @@
 
         <div class="gallery">
             <!-- Example build card 1 -->
-            <div class="build-card" data-category="medieval">
+            <a href="https://github.com/yourusername/medieval-castle" class="build-card" data-category="medieval">
                 <img src="/images/temple.PNG" alt="Medieval Castle" class="build-image">
                 <div class="build-info">
                     <h3 class="build-title">Medieval Castle</h3>
                     <p class="build-description">A sprawling castle with towers, courtyards, and a moat. Perfect for survival multiplayer.</p>
-                    <a href="https://github.com/yourusername/medieval-castle" class="build-link">Download</a>
                 </div>
-            </div>
+            </a>
 
             <!-- Example build card 2 -->
-            <div class="build-card" data-category="modern">
+            <a href="https://github.com/yourusername/modern-mansion" class="build-card" data-category="modern">
                 <img src="/images/barn.PNG" alt="Modern Mansion" class="build-image">
                 <div class="build-info">
                     <h3 class="build-title">Modern Mansion</h3>
                     <p class="build-description">Luxury modern home with swimming pool, garden, and spacious interior.</p>
-                    <a href="https://github.com/yourusername/modern-mansion" class="build-link">Download</a>
                 </div>
-            </div>
+            </a>
 
             <!-- Example build card 3 -->
-            <div class="build-card" data-category="fantasy">
+            <a href="https://github.com/yourusername/elven-tree-city" class="build-card" data-category="fantasy">
                 <img src="/api/placeholder/400/320" alt="Elven Tree City" class="build-image">
                 <div class="build-info">
                     <h3 class="build-title">Elven Tree City</h3>
                     <p class="build-description">Magical city built among giant trees with hanging bridges and glowing lanterns.</p>
-                    <a href="https://github.com/yourusername/elven-tree-city" class="build-link">Download</a>
                 </div>
-            </div>
+            </a>
 
             <!-- Example build card 4 -->
-            <div class="build-card" data-category="redstone">
+            <a href="https://github.com/yourusername/automatic-farm" class="build-card" data-category="redstone">
                 <img src="/api/placeholder/400/320" alt="Automatic Farm" class="build-image">
                 <div class="build-info">
                     <h3 class="build-title">Automatic Farm</h3>
                     <p class="build-description">Self-harvesting wheat, carrot, potato and beetroot farm with storage system.</p>
-                    <a href="https://github.com/yourusername/automatic-farm" class="build-link">Download</a>
                 </div>
-            </div>
+            </a>
 
             <!-- Example build card 5 -->
-            <div class="build-card" data-category="medieval">
+            <a href="https://github.com/yourusername/medieval-village" class="build-card" data-category="medieval">
                 <img src="/api/placeholder/400/320" alt="Medieval Village" class="build-image">
                 <div class="build-info">
                     <h3 class="build-title">Medieval Village</h3>
                     <p class="build-description">Complete village with blacksmith, tavern, church, and residential buildings.</p>
-                    <a href="https://github.com/yourusername/medieval-village" class="build-link">Download</a>
                 </div>
-            </div>
+            </a>
 
             <!-- Example build card 6 -->
-            <div class="build-card" data-category="fantasy">
+            <a href="https://github.com/yourusername/crystal-palace" class="build-card" data-category="fantasy">
                 <img src="/api/placeholder/400/320" alt="Crystal Palace" class="build-image">
                 <div class="build-info">
                     <h3 class="build-title">Crystal Palace</h3>
                     <p class="build-description">Magical castle made of colored glass with crystalline structures.</p>
-                    <a href="https://github.com/yourusername/crystal-palace" class="build-link">Download</a>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 
